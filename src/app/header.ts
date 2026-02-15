@@ -1,16 +1,12 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Dropdown } from './dropdown';
 
 @Component({
   selector: 'cms-header',
-  imports: [Dropdown],
+  imports: [Dropdown, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header {
-  @Output() selectedFeatureEvent = new EventEmitter<string>();
-
-  onSelected(selectedEvent: string) {
-    this.selectedFeatureEvent.emit(selectedEvent);
-  }
 }

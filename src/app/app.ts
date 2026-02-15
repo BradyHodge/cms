@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { Header } from './header';
-import { Contacts } from './contacts/contacts';
-import { Documents } from './documents/documents';
-import { MessageList } from './messages/message-list/message-list';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, Header, Contacts, Documents, MessageList],
+  imports: [RouterOutlet, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   title = 'cms';
-  selectedFeature = 'documents';
-
-  switchView(selectedFeature: string) {
-    this.selectedFeature = selectedFeature;
-  }
 }
